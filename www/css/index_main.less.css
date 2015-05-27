@@ -248,6 +248,7 @@ body:not(#afui) .upage-outer {
 }
 @media all {
   .BlueBackground {
+    background-color: #1d3956;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;

@@ -285,17 +285,17 @@ body:not(#afui) .upage-outer {
 @media all {
   .wrapping-col > .d-margins,
   .wrapping-col > .afScrollPanel > .d-margins {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 0px;
+    margin-right: 0px;
   }
   .wrapping-col > .d-margins,
   .wrapping-col > .afScrollPanel > .d-margins {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 0px;
+    margin-right: 0px;
   }
   .d-margins {
-    margin-top: 5px;
-    margin-bottom: 6px;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 }
 .list .d-margins,
@@ -428,5 +428,71 @@ body:not(#afui) .upage-outer {
 @media all {
   .grid-height {
     height: 50vh;
+    min-height: 100%;
+    max-height: 100%;
+  }
+}
+@media all {
+  .btn1 {
+    -webkit-flex: 1 1 auto !important;
+    -moz-flex: 1 1 auto !important;
+    -ms-flex: 1 1 auto !important;
+    -o-flex: 1 1 auto !important;
+    flex: 1 1 auto !important;
+    width: 30%;
+    min-width: 0%;
+    max-width: 100%;
+  }
+}
+.bar > .buttons .d-margins {
+  margin: auto;
+}
+.bar {
+  z-index: 1;
+}
+.upage-outer.fixed-header-footer {
+  position: static;
+}
+@media all {
+  .wrapping-col > .margins-5,
+  .wrapping-col > .afScrollPanel > .margins-5 {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .wrapping-col > .margins-5,
+  .wrapping-col > .afScrollPanel > .margins-5 {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .margins-5 {
+    margin-top: 5%;
+    margin-bottom: 5px;
+  }
+}
+@media all {
+  .wrapping-col > .txtUsernamePassword,
+  .wrapping-col > .afScrollPanel > .txtUsernamePassword {
+    margin-left: 20%;
+    margin-right: 40%;
+  }
+  .wrapping-col > .txtUsernamePassword,
+  .wrapping-col > .afScrollPanel > .txtUsernamePassword {
+    margin-left: 20%;
+    margin-right: 40%;
+  }
+  .txtUsernamePassword {
+    margin-top: 10%;
+  }
+}
+@media all {
+  .sknUsernamePassword {
+    -webkit-flex: 1 1 auto !important;
+    -moz-flex: 1 1 auto !important;
+    -ms-flex: 1 1 auto !important;
+    -o-flex: 1 1 auto !important;
+    flex: 1 1 auto !important;
+    width: 60%;
+    min-width: 60%;
+    max-width: 60%;
   }
 }

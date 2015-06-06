@@ -27,9 +27,18 @@
     });
     
         /* button  #btn22 */
+    
+    
+        /* button  #btn22 */
     $(document).on("click", "#btn22", function(evt)
     {
-         activate_page("#StudentResult"); 
+         activate_page("#ScreenResults"); 
+    });
+    
+        /* button  #btn21 */
+    $(document).on("click", "#btn21", function(evt)
+    {
+         activate_page("#ScreenAttendance"); 
     });
     
     }

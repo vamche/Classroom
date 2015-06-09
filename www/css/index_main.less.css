@@ -248,7 +248,7 @@ body:not(#afui) .upage-outer {
 }
 @media all {
   .BlueBackground {
-    background-color: #1d3956;
+    background-color: #295785;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -503,40 +503,21 @@ body:not(#afui) .upage-outer {
     -ms-flex: 1 1 auto !important;
     -o-flex: 1 1 auto !important;
     flex: 1 1 auto !important;
-    width: 50%;
-    min-width: 50%;
-    max-width: 50%;
-  }
-}
-.uib_row_1:not(.cright) > .col {
-  padding-right: 20px;
-}
-.uib_row_1.cright > .col {
-  padding-left: 20px;
-}
-@media all {
-  .col-0_12-12 {
-    width: auto;
-    float: none !important;
-  }
-  .urow:not(.cright) > .col-0_12-12 {
-    padding-right: 0px !important;
-  }
-  .urow.cright > .col-0_12-12 {
-    padding-left: 0px !important;
+    width: 70%;
+    min-width: 70%;
+    max-width: 70%;
   }
 }
 @media all {
   .grid-pad {
     padding-top: 10px;
-    padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
   }
 }
 @media all and (min-width: 0px) {
   .row-height-1 > .col > .content-area {
-    min-height: 100px;
+    min-height: 10px;
   }
 }
 @media all and (min-width: 0px) {
@@ -618,5 +599,162 @@ body:not(#afui) .upage-outer {
 @media all and (min-width: 0px) {
   .row-height-4 > .col > .content-area {
     min-height: 100px;
+  }
+}
+.uib_row_5 > .col {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media all {
+  .col-0 {
+    width: auto;
+    float: none !important;
+    clear: both;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+}
+@media all and (min-width: 0px) {
+  .row-height-5 > .col > .content-area {
+    min-height: 100px;
+  }
+}
+.uib_row_6 > .col {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media all {
+  .col-0 {
+    width: auto;
+    float: none !important;
+    clear: both;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+}
+@media all and (min-width: 0px) {
+  .row-height-6 > .col > .content-area {
+    min-height: 60px;
+  }
+}
+@media all and (min-width: 0px) {
+  .row-height-7 > .col > .content-area {
+    min-height: 70px;
+  }
+}
+.figure-align {
+  display: table;
+  margin: 0px auto;
+}
+.figure-align img {
+  width: 100%;
+}
+.image-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+@media all {
+  .scale-image img {
+    width: 200px;
+  }
+}
+@media all {
+  .sknAppIcon_Login img {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media all {
+  .sknAppNameHdr_Login {
+    font-size: 25px;
+    font-weight: 400;
+    color: #ffffff;
+    font-family: sans-serif;
+  }
+}
+@media all {
+  .sknAppIconTextAlign_Login {
+    text-align: center;
+  }
+}
+@media all {
+  .sknAppIconTextPadd_Login figcaption {
+    padding: 0px 0px 0px 10px;
+  }
+}
+@media all {
+  .wrapping-col > .margin_10,
+  .wrapping-col > .afScrollPanel > .margin_10 {
+    margin-left: 6%;
+    margin-right: 6%;
+  }
+  .wrapping-col > .margin_10,
+  .wrapping-col > .afScrollPanel > .margin_10 {
+    margin-left: 6%;
+    margin-right: 6%;
+  }
+  .margin_10 {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+}
+@media all {
+  .wrapping-col > .AppIconTextMargin_Login,
+  .wrapping-col > .afScrollPanel > .AppIconTextMargin_Login {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+  .wrapping-col > .AppIconTextMargin_Login,
+  .wrapping-col > .afScrollPanel > .AppIconTextMargin_Login {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+  .AppIconTextMargin_Login {
+    margin-top: 20%;
+    margin-bottom: 20%;
+  }
+}
+.uib_row_7:not(.cright) > .col {
+  padding-right: 10px;
+}
+.uib_row_7.cright > .col {
+  padding-left: 10px;
+}
+@media all {
+  .col-0_12-12 {
+    width: auto;
+    float: none !important;
+  }
+  .urow:not(.cright) > .col-0_12-12 {
+    padding-right: 0px !important;
+  }
+  .urow.cright > .col-0_12-12 {
+    padding-left: 0px !important;
+  }
+}
+.left-receptacle {
+  float: left;
+}
+.right-receptacle {
+  float: right;
+}
+.ellipsis {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+@media all {
+  .SMS_TextColor_White p {
+    font-size: 10px;
+    color: #ffffff;
+    font-family: sans-serif;
+    text-align: center;
+    line-height: normal;
+  }
+}
+@media all {
+  .SMS_RowSpace_Min {
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 }

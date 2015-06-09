@@ -15,10 +15,7 @@
     });
     
         /* button  #btnLogin_Login */
-    $(document).on("click", "#btnLogin_Login", function(evt)
-    {
-         activate_page("#ScreenDashboard"); 
-    });
+    
     
         /* button  #btn11 */
     $(document).on("click", "#btn11", function(evt)
@@ -39,6 +36,12 @@
     $(document).on("click", "#btn21", function(evt)
     {
          activate_page("#ScreenAttendance"); 
+    });
+    
+        /* button  #btnLogin_Login */
+    $(document).on("click", "#btnLogin_Login", function(evt)
+    {
+         activate_page("#ScreenDashboard"); 
     });
     
     }

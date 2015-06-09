@@ -72,24 +72,70 @@
                 <script type="application/javascript" src="js/studentResult.js"></script>
                 <script src="http://debug-software.intel.com/target/target-script-min.js#prjVrlwFCkiEhXCYn82wZbg0rQeR-Qsvm6W4GbXwDqY"></script>
 
+                <script type="application/javascript" src="xdk/appdesigner/js/rest-of-space.js"></script>
         </head>
 
         <body ng-app="myApp">
-            
 
                 <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
                 <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work above -->
                 <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
-                <div class="upage vertical-col left BlueBackground" id="ScreenLogin">
+                <div class="upage vertical-col BlueBackground" id="ScreenLogin">
 
-                        <div class="grid grid-pad urow uib_row_1 row-height-1" data-uib="layout/row" data-ver="0">
-                                <div class="col uib_col_1 col-0_12-12" data-uib="layout/col" data-ver="0">
+                        <div class="grid grid-pad urow uib_row_5 row-height-5" data-uib="layout/row" data-ver="0">
+
+                                <span class="uib_shim"></span>
+                                <div class="col uib_col_8 col-0" data-uib="layout/col" data-ver="0">
+                                        <div class="widget-container content-area vertical-col center">
+
+                                                <div class="widget uib_w_16 sknAppIcon_Login sknAppNameHdr_Login sknAppIconTextAlign_Login sknAppIconTextPadd_Login AppIconTextMargin_Login" data-uib="media/img" data-ver="0">
+                                                        <figure class="figure-align">
+                                                                <img src="images/Checkmark.png" id="AppIconText">
+                                                                <figcaption data-position="right" class="image-cell">CLASSROOM</figcaption>
+                                                        </figure>
+                                                </div>
+                                                <label class="item item-input widget uib_w_14 margins-5 width50" data-uib="ionic/input" data-ver="0">
+                                                        <input type="text" placeholder="USERNAME">
+                                                </label>
+                                                <label class="item item-input widget uib_w_15 width50" data-uib="ionic/input" data-ver="0">
+                                                        <input type="password" placeholder="PASSWORD">
+                                                </label><span class="uib_shim"></span>
+                                        </div>
+                                </div>
+
+                        </div>
+
+                        <form class="grid grid-pad urow uib_row_6 row-height-6 rest-of-height" data-uib="layout/row" data-ver="0">
+
+                                <div class="col uib_col_1 col-0" data-uib="layout/col" data-ver="0">
                                         <div class="widget-container content-area vertical-col center">
                                                 <button class="button widget uib_w_1 margins-5 width50" data-uib="ionic/button" data-ver="0" id="btnLogin_Login">Login</button><span class="uib_shim"></span>
                                         </div>
+                                </div><span class="uib_shim"></span>
+                        </form>
+
+                        <form class="grid urow uib_row_7 row-height-3" data-uib="layout/row" data-ver="0">
+                                <div class="col uib_col_10 col-0_12-12" data-uib="layout/col" data-ver="0">
+                                        <div class="widget-container content-area vertical-col">
+
+                                                <div class="widget uib_w_17 SMS_TextColor_White" data-uib="media/text" data-ver="0">
+                                                        <div class="widget-container left-receptacle"></div>
+                                                        <div class="widget-container right-receptacle"></div>
+                                                        <div>
+                                                                <p>Your school doesn't have Classroom?</p>
+                                                        </div>
+                                                </div>
+                                                <div class="widget uib_w_18 SMS_TextColor_White d-margins" data-uib="media/text" data-ver="0">
+                                                        <div class="widget-container left-receptacle"></div>
+                                                        <div class="widget-container right-receptacle"></div>
+                                                        <div>
+                                                                <p>Click here to find out about us.</p>
+                                                        </div>
+                                                </div><span class="uib_shim"></span>
+                                        </div>
                                 </div>
                                 <span class="uib_shim"></span>
-                        </div>
+                        </form>
                 </div>
                 <div class="upage hidden BlueBackground" id="ScreenDashboard">
 
@@ -173,14 +219,13 @@
                         </div>
                 </div>
                 <div class="upage vertical-col left hidden BlueBackground" id="ScreenAttendance">
-                       
 
                         <div class="grid grid-pad urow uib_row_4 row-height-4" data-uib="layout/row" data-ver="0">
                                 <div class="col uib_col_4 col-0_12-12" data-uib="layout/col" data-ver="0">
                                         <div class="widget-container content-area vertical-col">
-                                                 <input type="text" id="mydate" gldp-id="mydate"       visibility="hidden">
-                        <div gldp-el="mydate" style="width:400px; height:300px; position:absolute; top:70px; left:100px;">
-                        </div>
+                                                <input type="text" id="mydate" gldp-id="mydate" visibility="hidden">
+                                                <div gldp-el="mydate" style="width:400px; height:300px; position:absolute; top:70px; left:100px;">
+                                                </div>
                                                 <span class="uib_shim"></span>
                                         </div>
                                 </div>

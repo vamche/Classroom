@@ -1,8 +1,17 @@
 .gldp-flatwhite {
 	position: absolute;
 	font-family: 'helvetica';
+    /*background-color: white;
+    border-radius: 20px;*/
 }
 
+
+/*outer border*/
+.outerBorder {
+	 border-style: ridge;
+	border-width: 1;
+	border-radius: 10px;
+}
 /* Core style for every cell */
 .gldp-flatwhite .core {
 	box-sizing: border-box;
@@ -23,15 +32,17 @@
 .gldp-flatwhite .border {
 	border-style: solid;
 	border-width: 0;
-	border-color: #fff;
+	border-color: #ffffff;
 }
 
 /* Month/Year text and select */
 .gldp-flatwhite .monyear,
 .gldp-flatwhite .monyear select {
+    color:#d3d3d3;
 	font-size: 16px !important;
 	font-weight: bold;
-	background: #eee;
+	background: #fff;
+    padding-top: 4%;
 }
 
 /* Month/Year text */
@@ -42,7 +53,7 @@
 /* Prev/Next arrows */
 .gldp-flatwhite .prev-arrow,
 .gldp-flatwhite .next-arrow {
-	color: #666;
+	color: #d3d3d3;
 	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.75);
 }
 
@@ -59,10 +70,32 @@
 
 /* Days of the week */
 .gldp-flatwhite .dow {
-	color: #222;
+	color: #00f;
 	font-weight: bold;
 	cursor: wait !important;
+	background: #fff;
+}
+
+/* Current Week */
+.gldp-flatwhite .currentWeek {
 	background: #eee;
+}
+
+/* Current Week left border*/
+.gldp-flatwhite .cellTopPadding{
+	padding-top: 4%;
+}
+
+/* Current Week left border*/
+.gldp-flatwhite .currentWeekLeft{
+	border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+/* Current Week right border*/
+.gldp-flatwhite .currentWeekRight {
+	  border-top-right-radius: 20px;
+	  border-bottom-right-radius: 20px;
 }
 
 /* Weekdays */
@@ -77,7 +110,7 @@
 /* Weekend days */
 .gldp-flatwhite .sat,
 .gldp-flatwhite .sun {
-	color: #888;
+	color: #ff0;
 	font-weight: bold;
 }
 
@@ -107,18 +140,20 @@
 
 /* Currently selected day */
 .gldp-flatwhite .selected {
-	color: #fff;
+	color: #000;
 	font-weight: bold;
-	border-color: #888;
-	background: #aaa;
+	border-color: #fff;
+	background: #eee;
+	text-decoration: underline;
 }
 
 /* Today */
 .gldp-flatwhite .today {
-	color: #fff;
+	color: #000;
 	font-weight: bold;
-	border-color: #000;
-	background: #222;
+	border-color: #fff;
+	background: #fff;
+	text-decoration: underline;
 }
 
 /* Special */
@@ -128,3 +163,30 @@
 	border-color: #444;
 	background: #666;
 }
+
+/* absent */
+.gldp-flatwhite .absent {
+	color: #f00;
+	font-weight: bold;
+}
+
+/* present */
+.gldp-flatwhite .present {
+	color: #0f0;
+	font-weight: bold;
+}
+
+/* holiday */
+.gldp-flatwhite .holiday {
+	color: #ff0;
+	font-weight: bold;
+}
+
+/* event */
+.gldp-flatwhite .event {
+	color: #00f;
+	font-weight: bold;
+
+}
+
+

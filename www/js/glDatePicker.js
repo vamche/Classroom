@@ -102,10 +102,10 @@
 		//         { from: new Date(0, 9, 1), repeatYear: true }
 		//     ]
 		selectableDateRange: null,
-		absentDateRange:null,
-		presentDateRange:null,
-		holidayDateRange:null,
-		eventDateRange:null,
+		absentDates:null,
+		presentDates:null,
+		holidayDates:null,
+		eventDates:null,
 
 		// Mark certain dates as special dates.  Similar to selectableDates, this
 		// property supports both repeatYear and repeatMonth flags.
@@ -276,7 +276,7 @@
 				// Constants
 				var maxRow = 6;
 				var maxCol = 7;
-				var borderSize = options.borderSize + 'px';
+				var borderSize = options.borderSize + '%';
 
 				// Helper function to build selectable list
 				var getSelectableList = function(min, max, userList) {
@@ -306,11 +306,11 @@
 				var selectableMonths = getSelectableList(0, 11, options.selectableMonths);
 				var selectableYears = getSelectableList(todayVal.year - 5, todayVal.year + 5, options.selectableYears);
 				var selectableDOW = getSelectableList(0, 6, options.selectableDOW);
-				var dowNames = options.dowNames || [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' ];
+				var dowNames = options.dowNames || [ 'S', 'M', 'T', 'W', 'T', 'F', 'S' ];
 				var monthNames = options.monthNames || [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
 
 				// Create cell width based on el size
-				var containerWidth = el.outerWidth();
+				var containerWidth = 98;//el.outerWidth();
 				var containerHeight = containerWidth;
 
 				// Create cell size based on container size
@@ -318,10 +318,13 @@
 					return (_size / _count) + ((options.borderSize / _count) * (_count - 1));
 				};
 				var cellWidth = getCellSize(containerWidth, maxCol);
-				var cellHeight = getCellSize(containerHeight, maxRow + 2);
+               // alert("1 "+cellWidth);
+                //alert("containerWidth1 "+containerWidth);
+				var cellHeight = 10; //getCellSize(containerHeight, maxRow + 2);
 
 				// If calendar doesn't exist, create it and re-assign it to self
 				if(!calendar.length) {
+                
 					self.calendar = calendar = $('<div/>')
 						.attr('gldp-el', el.attr('gldp-id'))
 						.data('is', true)
@@ -329,18 +332,22 @@
 						{
 							display: true,
 							zIndex: options.zIndex,
-							width: (cellWidth * maxCol) + 'px'
+							width: (cellWidth * maxCol) + '%'
 						});
 
 					$('body').append(calendar);
 				}
 				else {
 					if(!eval(calendar.data('is'))) {
-						containerWidth = calendar.outerWidth();
+						containerWidth = 98;//calendar.outerWidth();
 						containerHeight = calendar.outerHeight();
 
 						cellWidth = getCellSize(containerWidth, maxCol);
-						cellHeight = getCellSize(containerHeight, maxRow + 2);
+                       // alert("2 "+cellWidth);
+                        //alert("containerWidth 2 "+containerWidth);
+						cellHeight = 55;
+                        
+                       
 					}
 				}
 
@@ -358,8 +365,8 @@
 					var elPos = el.offset();
 					calendar.css(
 					{
-						top: (elPos.top + el.outerHeight() + options.calendarOffset.y) + 'px',
-						left: (elPos.left + options.calendarOffset.x) + 'px'
+						top: '20%',//(elPos.top + el.outerHeight() + options.calendarOffset.y) + '%',
+						left:  '5%'
 					});
 				};
 				$(window).resize(onResize);
@@ -368,9 +375,9 @@
 				// Create variables for cells
 				var cellCSS =
 				{
-					width: cellWidth + 'px',
-					height: cellHeight + 'px',
-					lineHeight: cellHeight + 'px'
+					width:  '14%',
+					height:  '35%',
+					lineHeight: '35%'
 				};
 
 				// Helper function to setDate
@@ -466,7 +473,7 @@
 									})
 								)
 								.append(
-									$('<a/>')
+									$('<img src="../images/img1.png">')
 										.addClass('prev-arrow' + (showPrev ? '' : '-off'))
 										.html(options.prevArrow)
 								)
@@ -485,12 +492,12 @@
 								.css(
 									$.extend({}, cellCSS,
 									{
-										width: titleWidth + 'px',
+										width: titleWidth + '%',
 										borderTopWidth: borderSize,
 										marginLeft: '-' + (borderSize)
 									})
 								);
-
+            
 				var nextCell = $('<div/>')
 								.addClass(monyearClass)
 								.css(
@@ -501,7 +508,7 @@
 									})
 								)
 								.append(
-									$('<a/>')
+									$('<img src="../images/img2.png">')
 										.addClass('next-arrow' + (showNext ? '' : '-off'))
 										.html(options.nextArrow)
 								)
@@ -519,6 +526,8 @@
 					.append(titleCell)
 					.append(nextCell);
 
+				var currentWeekVal = true; 
+				var currentWeekRow = null;
 				// Add all the cells to the calendar
 				for(var row = 0, cellIndex = 0; row < maxRow + 1; row++) {
 					for(var col = 0; col < maxCol; col++, cellIndex++) {
@@ -547,6 +556,27 @@
 							var isSelectable = true;
 
 							// Helper function to get repeat friendly date against current date
+							if(currentWeekVal){
+								var curr = new Date(); // get current date
+								var first = curr.getDate() - curr.getDay()+1; // First day is the day of the month - the day of the week
+								var last = first + 6; // last day is the first day + 6
+
+								var firstday = new Date(curr.setDate(first));
+								var lastday = new Date(curr.setDate(last));
+								var dayValue = new Date(cellDateTime);
+								var monthVal = cellDateVal.month;
+								var yearVal = cellDateVal.year;
+								if(cellDateVal.date >= firstday.getDate() && cellDateVal.date <= lastday.getDate()){
+									if(monthVal == firstday.getMonth() || monthVal == lastday.getMonth()){
+										if(yearVal == firstday.getFullYear() || yearVal == lastday.getFullYear()){
+											currentWeekVal = false;
+											currentWeekRow = row;
+										}
+									}
+								}
+							}
+							
+							if(todayTime == cellDateTime) { todayRow = true; }
 							var getRepeatDate = function(v, date) {
 								// If repeating, set the date's year and month accordingly
 								if(v.repeatYear === true) { date.setYear(cellDateVal.year); }
@@ -608,7 +638,7 @@
 								// Handle today or selected dates
 								if(firstDateMonth != cellDateVal.month) { cellClass += ' outday'; }
 								if(todayTime == cellDateTime) { cellClass = 'today'; cellZIndex += 50; }
-								if(options.selectedDate._time() == cellDateTime) { cellClass = 'selected'; cellZIndex += 51; }
+							
 
 								// Handle special dates
 								if(options.specialDates) {
@@ -622,7 +652,62 @@
 										}
 									});
 								}
+                                
+								// Handle present dates
+								if(options.presentDates) {
+									$.each(options.presentDates, function(i, v1) {
+										var vDate1 = getRepeatDate(v1, v1.date);
 
+										if(vDate1.time == cellDateTime) {
+											cellClass = (v1.cssClass || 'present');
+											cellZIndex += 53;
+											specialData = v1.data;
+										}
+									});
+								}
+								
+								
+								// Handle absent dates
+								if(options.absentDates) {
+									$.each(options.absentDates, function(i, v2) {
+										var vDate2 = getRepeatDate(v2, v2.date);
+
+										if(vDate2.time == cellDateTime) {
+											cellClass = (v2.cssClass || 'absent');
+											cellZIndex += 54;
+											specialData = v2.data;
+										}
+									});
+								}
+								
+								
+								// Handle holiday dates
+								if(options.holidayDates) {
+									$.each(options.holidayDates, function(i, v3) {
+										var vDate3 = getRepeatDate(v3, v3.date);
+
+										if(vDate3.time == cellDateTime) {
+											cellClass = (v3.cssClass || 'holiday');
+											cellZIndex += 55;
+											specialData = v3.data;
+										}
+									});
+								}
+								
+								// Handle event dates
+								if(options.eventDates) {
+									$.each(options.eventDates, function(i, v4) {
+										var vDate4 = getRepeatDate(v4, v4.date);
+
+										if(vDate4.time == cellDateTime) {
+											cellClass = (v4.cssClass || 'event');
+											cellZIndex += 56;
+											specialData = v4.data;
+										}
+									});
+								}
+								
+								if(options.selectedDate._time() == cellDateTime) { cellClass = 'selected'; cellZIndex += 51; }
 								cell
 									.mousedown(function() { return false; })
 									.hover(function(e) {
@@ -673,7 +758,24 @@
 							.data('data', { date: cellDate, data: specialData})
 							.addClass(coreClass + cellClass)
 							.css(cellCSS);
-
+                        cell
+                            .addClass('cellTopPadding');
+							
+						if(row == currentWeekRow){
+							cell
+								.addClass('currentWeek');
+							if(col == 0)
+							{
+								cell
+									.addClass('currentWeekLeft');								
+							}else if(col == 6)
+							{
+								cell
+									.addClass('currentWeekRight');
+							}
+                            							
+						}
+											
 						// Add cell to calendar
 						calendar.append(cell);
 					}

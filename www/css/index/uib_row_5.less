@@ -1,7 +1,20 @@
+<<<<<<< HEAD
+@gutter_uib_row_5: 20px;
+
+.uib_row_5:not(.cright) > .col { padding-right:@gutter_uib_row_5; }
+
+.uib_row_5.cright       > .col { padding-left:@gutter_uib_row_5; }
+
+@media all {
+ .col-0_12-12 { width: auto; float: none !important; }
+ .urow:not(.cright) > .col-0_12-12 { padding-right:0px !important; }
+ .urow.cright       > .col-0_12-12 { padding-left:0px !important; }
+=======
 @gutter_r1: 20px;
 
 .uib_row_5 > .col { padding-left:(@gutter_r1 / 2); padding-right:(@gutter_r1 / 2); }
 
 @media all{
   .col-0     { width: auto; float: none !important;  clear:both; padding-left:0px !important; padding-right:0px !important; }
+>>>>>>> 199828e0f57f97523598bed094e7ba9217271d14
 }

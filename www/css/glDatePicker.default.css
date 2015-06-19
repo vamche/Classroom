@@ -1,6 +1,8 @@
 .gldp-default {
 	position: absolute;
 	font-family: 'helvetica';
+    background-color: white;
+	border-radius: 20px;
 }
 
 /* Core style for every cell */

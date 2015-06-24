@@ -24,10 +24,7 @@
     
     
         /* button  #btn22 */
-    $(document).on("click", "#btn22", function(evt)
-    {
-         activate_page("#ScreenResults"); 
-    });
+    
     
         /* button  #btn21 */
     $(document).on("click", "#btn21", function(evt)
@@ -139,15 +136,27 @@
     });
     
         /* button  #btn12 */
-    $(document).on("click", "#btn12", function(evt)
-    {
-         activate_page("#ScreenResults"); 
-    });
+    
     
         /* button  #btn23 */
     $(document).on("click", "#btn23", function(evt)
     {
          activate_page("#ScreenHomeworkAdd"); 
+    });
+    
+        /* button  #btn22 */
+    $(document).on("click", "#btn22", function(evt)
+    {
+         activate_page("#ScreenHomeworkList"); 
+    });
+    
+        /* button  #btn12 */
+    
+    
+        /* button  #btn12 */
+    $(document).on("click", "#btn12", function(evt)
+    {
+         activate_page("#ScreenResults"); 
     });
     
     }

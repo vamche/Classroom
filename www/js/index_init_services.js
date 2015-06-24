@@ -9,3 +9,5 @@ angular.module('myApp',['ionic']).config(['$controllerProvider', function($contr
 	$controllerProvider.allowGlobals();
 }]);
 
+
+myApp.controller

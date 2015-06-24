@@ -1,0 +1,11 @@
+@gutter_uib_row_homeworkadd_form: 20px;
+
+.uib_row_homeworkadd_form:not(.cright) > .col { padding-right:@gutter_uib_row_homeworkadd_form; }
+
+.uib_row_homeworkadd_form.cright       > .col { padding-left:@gutter_uib_row_homeworkadd_form; }
+
+@media all {
+ .col-0_12-12 { width: auto; float: none !important; }
+ .urow:not(.cright) > .col-0_12-12 { padding-right:0px !important; }
+ .urow.cright       > .col-0_12-12 { padding-left:0px !important; }
+}
